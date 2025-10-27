@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>실시간 상담 메신저</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 상담 메신저</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-    <div id="login-screen">
-        <h2>로그인</h2>
-        <input type="text" id="user-id" placeholder="ID (내담자는 비워도 됨)">
-        <select id="user-type">
-            <option value="client">내담자</option>
-            <option value="counselor">상담사</option>
-        </select>
-        <button onclick="login()">접속하기</button>
-    </div>
+    <div id="login-screen">
+        <h2>로그인</h2>
+        <input type="text" id="user-id" placeholder="ID (내담자는 비워도 됨)">
+        <select id="user-type">
+            <option value="client">내담자</option>
+            <option value="counselor">상담사</option>
+        </select>
+                <button id="login-btn">접속하기</button> 
+    </div>
 
-    <div id="main-app" style="display:none;">
-        <div id="sidebar">
-            <h3>내담자 목록</h3>
-            <ul id="client-list">
-                </ul>
-            <button id="download-btn" style="display: none;">대화 다운로드</button>
-            <button id="logout-btn">상담/로그아웃 종료</button>
-        </div>
+    <div id="main-app" style="display:none;">
+        <div id="sidebar">
+            <h3>내담자 목록</h3>
+            <ul id="client-list">
+                </ul>
+            <button id="download-btn" style="display: none;">대화 다운로드</button>
+            <button id="logout-btn">상담/로그아웃 종료</button>
+        </div>
 
-        <div id="chat-window">
-            <div id="chat-header">
-                <span id="current-chat-name">채팅방을 선택해주세요.</span>
-            </div>
-            <div id="messages">
-                </div>
-            <div id="input-area">
-                <textarea id="message-input" rows="3" placeholder="메시지를 입력하세요 (Ctrl+Enter 전송)"></textarea>
-                <button id="send-button">전송 (Ctrl+Enter)</button>
-            </div>
-        </div>
-    </div>
+        <div id="chat-window">
+            <div id="chat-header">
+                <span id="current-chat-name">채팅방을 선택해주세요.</span>
+            </div>
+            <div id="messages">
+                </div>
+            <div id="input-area">
+                <textarea id="message-input" rows="3" placeholder="메시지를 입력하세요 (Ctrl+Enter 전송)"></textarea>
+                <button id="send-button">전송 (Ctrl+Enter)</button>
+            </div>
+        </div>
+    </div>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="client.js"></script>
+            <script src="client.js"></script>
 </body>
 </html>
