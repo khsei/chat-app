@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#main-app {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+#sidebar {
+    width: 300px;
+    border-right: 1px solid #eee;
+    padding: 15px;
+    background-color: #e8e8e8;
+    display: flex;
+    flex-direction: column;
+}
+
+#client-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: auto;
+}
+
+#client-list li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#client-list li.selected {
+    background-color: #d1e7dd;
+    font-weight: bold;
+}
+
+.unread-count {
+    background-color: #ff4500;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.8em;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.online {
+    background-color: green;
+}
+
+.offline {
+    background-color: gray;
+}
+
+#chat-window {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #f0f0f0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+}
+
+.message-item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.sent {
+    justify-content: flex-end;
+}
+
+.received {
+    justify-content: flex-start;
+}
+
+.message-content {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 15px;
+    position: relative;
+    white-space: pre-wrap; /* 여러 줄 입력 지원 */
+}
+
+.sent .message-content {
+    background-color: #dcf8c6;
+    margin-right: 5px;
+}
+
+.received .message-content {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    margin-left: 5px;
+}
+
+.message-info {
+    font-size: 0.7em;
+    color: #888;
+    align-self: flex-end;
+    margin-bottom: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0 5px;
+}
+
+.received .message-info {
+    align-items: flex-start;
+}
+
+.read-status {
+    font-weight: bold;
+    color: #4CAF50;
+    margin-top: 2px;
+}
+
+.date-divider {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 0.8em;
+    color: #777;
+    position: relative;
+}
+
+.date-divider span {
+    background-color: #f8f9fa;
+    padding: 0 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.date-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #ccc;
+    z-index: 0;
+}
+
+#input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #eee;
+    background-color: #f0f0f0;
+}
+
+#message-input {
+    flex-grow: 1;
+    resize: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#send-button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
