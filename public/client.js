@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userType = userTypeSelect.value;
         
         if (userType === 'counselor' && userId !== 'counselor123') { 
-            alert("상담사 ID는 'counselor123'이어야 합니다.");
+            alert("상담사 ID를 올바로 입력해주세요");
             return;
         }
         socket.emit('login', { userId: userId, userType: userType });
